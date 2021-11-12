@@ -1157,7 +1157,7 @@ var Menubar = (function () {
       value: function _handleHover() {
         var _this5 = this;
         this.elements.menuItems.forEach(function (menuItem, index) {
-          menuItem.dom.link.addEventListener("mouseenter", function () {
+          menuItem.dom.link.addEventListener("pointerenter", function () {
             if (_this5.hoverType === "on") {
               _this5.currentEvent = "mouse";
               _this5.currentChild = index;
@@ -1180,7 +1180,7 @@ var Menubar = (function () {
             }
           });
           if (menuItem.isSubmenuItem) {
-            menuItem.dom.item.addEventListener("mouseleave", function () {
+            menuItem.dom.item.addEventListener("pointerleave", function () {
               if (_this5.hoverType === "on") {
                 if (_this5.hoverDelay > 0) {
                   setTimeout(function () {
@@ -1691,6 +1691,8 @@ var Menubar = (function () {
                 requestAnimationFrame(function () {
                   _this4.currentMenuItem.elements.childMenu.focusFirstChild();
                 });
+              } else {
+                _this4.currentMenuItem.dom.link.click();
               }
             } else if (key === "Escape") {
               preventEvent(event);

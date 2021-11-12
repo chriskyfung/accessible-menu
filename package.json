@@ -1,6 +1,6 @@
 {
   "name": "accessible-menu",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "description": "A JavaScript library to help you generate WCAG accessible menus in the DOM.",
   "main": "index.js",
   "files": [
@@ -11,9 +11,9 @@
   "scripts": {
     "prepare": "husky install",
     "commit": "git-cz",
-    "lint": "npm run eslint && npm run prettier",
-    "eslint": "eslint --ext .js --fix .",
-    "prettier": "prettier '**/*.js' --write --ignore-path .eslintignore",
+    "lint": "npm run eslint -- --fix && npm run prettier -- --write",
+    "eslint": "eslint --ext .js .",
+    "prettier": "prettier '**/*.js' --ignore-path .eslintignore",
     "prerelease": "npm run lint && npm run build && npm test",
     "release": "git add dist/. && standard-version -a",
     "prebuild": "npm run build:docs",
@@ -49,8 +49,8 @@
     "@babel/core": "^7.12.3",
     "@babel/eslint-parser": "^7.14.7",
     "@babel/preset-env": "^7.12.1",
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "@rollup/plugin-babel": "^5.3.0",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
